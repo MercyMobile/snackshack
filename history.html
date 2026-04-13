@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Peninsula Heritage & History | The Snack Shack</title>
+    <meta name="description" content="Explore the rich history of the Key Peninsula, Lakebay, and Volunteer Park. From the Mosquito Fleet to the Home Colony, learn about the heritage that shaped our community.">
+    <meta name="keywords" content="Key Peninsula history, Lakebay WA heritage, Volunteer Park history, Mosquito Fleet Puget Sound, Home Colony anarchist community, Lakebay Marina history">
+    <link rel="canonical" href="https://snackshack.pages.dev/history.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://snackshack.pages.dev/history.html">
+    <meta property="og:title" content="Key Peninsula Heritage & History | The Snack Shack">
+    <meta property="og:description" content="Deep dive into the stories of Lakebay and the Key Peninsula. A tribute to our local roots.">
+    <meta property="og:image" content="https://web.archive.org/web/20180806215701im_/http://snackshack-volunteerpark.com/images/concession.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-color: #69BE28; /* Seahawks Action Green */
+            --accent-color: #A5ACAF; /* Seahawks Wolf Grey */
+            --dark-bg: #111111;
+            --light-bg: #FDFBF7;
+            --text-dark: #2B2D42;
+            --text-light: #F8F9FA;
+            --hawks-navy: #002244;
+            --hawks-green: #69BE28;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* Header Styles */
+        header.site-header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(165, 172, 175, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--hawks-green);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .logo-word { padding: 4px 12px; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; }
+        .snack-box { background-color: var(--hawks-green); color: var(--hawks-navy); }
+        .shack-box { background-color: var(--hawks-navy); color: var(--hawks-green); }
+
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav a { color: var(--hawks-navy); text-decoration: none; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; }
+
+        /* History Content */
+        .history-hero {
+            padding: 10rem 5% 4rem;
+            background: var(--hawks-navy);
+            color: white;
+            text-align: center;
+        }
+
+        .history-hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .history-hero p { max-width: 800px; margin: 0 auto; font-size: 1.2rem; color: var(--accent-color); }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 4rem 5%; }
+
+        section { margin-bottom: 6rem; }
+        .section-title { font-size: 2.5rem; color: var(--hawks-navy); margin-bottom: 2rem; border-bottom: 4px solid var(--hawks-green); display: inline-block; }
+
+        /* Timeline Styles */
+        .timeline-container {
+            display: flex;
+            gap: 2rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .timeline-nav { flex: 1; border-left: 4px solid var(--accent-color); padding-left: 1.5rem; }
+        .timeline-node {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+            font-weight: 600;
+            border: 1px solid transparent;
+        }
+        .timeline-node:hover { background: #f0f0f0; }
+        .timeline-node.active { background: var(--hawks-green); color: var(--hawks-navy); border-color: var(--hawks-navy); }
+
+        .timeline-content {
+            flex: 2;
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 10px;
+            min-height: 350px;
+        }
+
+        /* Chart Containers */
+        .chart-box { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: 2rem; }
+        .chart-container { position: relative; height: 400px; width: 100%; }
+
+        /* Landmark Cards */
+        .landmark-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .landmark-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--hawks-navy);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .landmark-card:hover { transform: translateY(-5px); }
+        .landmark-card .icon-box { height: 120px; display: flex; align-items: center; justify-content: center; font-size: 3rem; background: var(--hawks-navy); color: var(--hawks-green); }
+        .landmark-card .p-6 { padding: 1.5rem; }
+        .landmark-card h3 { margin-bottom: 0.5rem; color: var(--hawks-navy); }
+        .details { font-size: 0.9rem; color: #555; margin-top: 1rem; display: none; padding-top: 1rem; border-top: 1px solid #eee; }
+
+        .fade-in { animation: fadeIn 0.5s ease forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        footer { background: var(--dark-bg); color: #888; text-align: center; padding: 3rem; }
+
+        @media (max-width: 768px) {
+            .timeline-container { flex-direction: column; }
+            .history-hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="/" class="logo">
+            <i class="fa-solid fa-burger"></i> 
+            <span class="logo-word snack-box">Snack</span> 
+            <span class="logo-word shack-box">Shack</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="/#story">Back to Shack</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="history-hero">
+        <h1>Key Peninsula Heritage</h1>
+        <p>From the Mosquito Fleet to the Home Colony, explore the stories that shaped Lakebay.</p>
+    </div>
+
+    <div class="container">
+        <!-- Section 1: Eras -->
+        <section id="timeline">
+            <h2 class="section-title">Eras of the Peninsula</h2>
+            <div class="timeline-container">
+                <div class="timeline-nav" id="timeline-controls"></div>
+                <div class="timeline-content" id="timeline-display"></div>
+            </div>
+        </section>
+
+        <!-- Section 2: Economy -->
+        <section id="economy">
+            <h2 class="section-title">Economic Evolution</h2>
+            <p style="margin-bottom: 1rem;">The shift from resource extraction to a commuter community.</p>
+            <div class="chart-box">
+                <div class="chart-container">
+                    <canvas id="economyChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Population -->
+        <section id="population">
+            <h2 class="section-title">Population Growth</h2>
+            <p style="margin-bottom: 1rem;">Tracking the impact of the Tacoma Narrows Bridge.</p>
+            <div class="chart-box">
+                <div class="chart-container">
+                    <canvas id="populationChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Landmarks -->
+        <section id="landmarks">
+            <h2 class="section-title">Historical Landmarks</h2>
+            <div class="landmark-grid">
+                <div class="landmark-card" onclick="toggleDetails('lm1')">
+                    <div class="icon-box"><i class="fa-solid fa-anchor"></i></div>
+                    <div class="p-6">
+                        <h3>Lakebay Marina</h3>
+                        <p>The beating heart of the Mosquito Fleet era.</p>
+                        <div id="lm1" class="details">Originally a cooperative dock, it was a vital link for Puget Sound steamboats exporting local goods to Tacoma.</div>
+                    </div>
+                </div>
+                <div class="landmark-card" onclick="toggleDetails('lm2')">
+                    <div class="icon-box"><i class="fa-solid fa-house-chimney"></i></div>
+                    <div class="p-6">
+                        <h3>The "Home" Colony</h3>
+                        <p>A utopian anarchist community founded in 1896.</p>
+                        <div id="lm2" class="details">An intentional community that attracted free thinkers and radicals, famous for its progressive social views.</div>
+                    </div>
+                </div>
+                <div class="landmark-card" onclick="toggleDetails('lm3')">
+                    <div class="icon-box"><i class="fa-solid fa-tree"></i></div>
+                    <div class="p-6">
+                        <h3>Penrose Point</h3>
+                        <p>From private resort to preserved state park.</p>
+                        <div id="lm3" class="details">A 165-acre marine park that showcases the modern shift toward conservation and recreation.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 The Snack Shack at Volunteer Park. Local History Synthesis.</p>
+    </footer>
+
+    <script>
+        const timelineData = [
+            { id: 'era1', title: 'Pre-1850s', icon: '🛶', heading: 'Indigenous Roots', content: 'Traditional territory of the sx̌ʷəbabš (Squaxin Island Tribe). They utilized these waters for fishing and seasonal encampments long before European arrival.' },
+            { id: 'era2', title: '1850s - 1890s', icon: '🪓', heading: 'Timber & Steamboats', content: 'The logging boom drew settlers. Steamboats of the "Mosquito Fleet" were the only lifeline, transporting timber out and supplies in.' },
+            { id: 'era3', title: '1896 - 1920s', icon: '🕊️', heading: 'Utopia on the Sound', content: 'The anarchist colony of "Home" was established. The economy diversified into poultry farming, leading to the Lakebay Co-op construction.' },
+            { id: 'era4', title: '1930s - 1970s', icon: '🌉', heading: 'The Bridge Era', content: 'The Tacoma Narrows Bridge construction changed everything, tethering the isolated peninsula to the urban centers of Pierce County.' },
+            { id: 'era5', title: 'Modern Day', icon: '🏡', heading: 'A Residential Retreat', content: 'Today, the area is a beloved bedroom community. Preservation efforts like saving the Lakebay Marina keep our unique identity alive.' }
+        ];
+
+        function initTimeline() {
+            const nav = document.getElementById('timeline-controls');
+            timelineData.forEach((era, i) => {
+                const div = document.createElement('div');
+                div.className = `timeline-node ${i===0?'active':''}`;
+                div.innerHTML = `${era.icon} ${era.title}`;
+                div.onclick = () => showEra(era, div);
+                nav.appendChild(div);
+            });
+            showEra(timelineData[0], nav.firstChild);
+        }
+
+        function showEra(era, el) {
+            document.querySelectorAll('.timeline-node').forEach(n => n.classList.remove('active'));
+            el.classList.add('active');
+            document.getElementById('timeline-display').innerHTML = `
+                <div class="fade-in">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">${era.icon}</div>
+                    <h3 style="font-size: 2rem; color: var(--hawks-navy); margin-bottom: 1rem;">${era.heading}</h3>
+                    <p style="font-size: 1.1rem; color: #444;">${era.content}</p>
+                </div>
+            `;
+        }
+
+        function initCharts() {
+            Chart.defaults.font.family = "'Montserrat', sans-serif";
+            
+            new Chart(document.getElementById('economyChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['1890', '1920', '1950', '1980', '2010', '2020'],
+                    datasets: [
+                        { label: 'Timber', data: [85, 50, 30, 10, 2, 1], backgroundColor: '#002244' },
+                        { label: 'Agri', data: [5, 30, 40, 15, 5, 2], backgroundColor: '#69BE28' },
+                        { label: 'Services', data: [0, 5, 20, 70, 90, 95], backgroundColor: '#A5ACAF' }
+                    ]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { x: { stacked: true }, y: { stacked: true } } }
+            });
+
+            new Chart(document.getElementById('populationChart'), {
+                type: 'line',
+                data: {
+                    labels: ['1900', '1920', '1940', '1960', '1980', '2000', '2020'],
+                    datasets: [{
+                        label: 'Population',
+                        data: [400, 900, 1500, 3200, 6500, 13500, 19000],
+                        borderColor: '#69BE28',
+                        backgroundColor: 'rgba(105, 190, 40, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+
+        function toggleDetails(id) {
+            const el = document.getElementById(id);
+            el.style.display = el.style.display === 'block' ? 'none' : 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initTimeline();
+            initCharts();
+        });
+    </script>
+</body>
+</html>

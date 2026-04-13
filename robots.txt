@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://snackshack.pages.dev/sitemap.xml

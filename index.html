@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Snack Shack | Burgers & Disc Golf | Volunteer Park, Lakebay</title>
+    <meta name="description" content="The Snack Shack at Volunteer Park, Lakebay WA. Family-owned eatery serving the best burgers, hot dogs, and chili cheese fries. Official disc golf pro shop for the 9-hole course.">
+    <meta name="keywords" content="Snack Shack Lakebay, Volunteer Park food, best burgers Lakebay WA, disc golf pro shop Lakebay, Nathan's Famous hot dogs Lakebay, Key Peninsula food">
+    <link rel="canonical" href="https://snackshack.pages.dev/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://snackshack.pages.dev/">
+    <meta property="og:title" content="The Snack Shack | Burgers & Disc Golf | Volunteer Park, Lakebay">
+    <meta property="og:description" content="Family-owned and locally loved. Visit the heart of Volunteer Park for classic burgers, Nathan's Famous hot dogs, and your disc golf gear.">
+    <meta property="og:image" content="https://web.archive.org/web/20180806215701im_/http://snackshack-volunteerpark.com/images/concession.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://snackshack.pages.dev/">
+    <meta property="twitter:title" content="The Snack Shack | Burgers & Disc Golf | Volunteer Park, Lakebay">
+    <meta property="twitter:description" content="Family-owned and locally loved. Visit the heart of Volunteer Park for classic burgers, Nathan's Famous hot dogs, and your disc golf gear.">
+    <meta property="twitter:image" content="https://web.archive.org/web/20180806215701im_/http://snackshack-volunteerpark.com/images/concession.jpg">
+
+    <!-- Structured Data (JSON-LD) for Local Business SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "The Snack Shack at Volunteer Park",
+      "image": "https://web.archive.org/web/20180806215701im_/http://snackshack-volunteerpark.com/images/concession.jpg",
+      "@id": "https://snackshack.pages.dev/",
+      "url": "https://snackshack.pages.dev/",
+      "telephone": "+12538849240",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5514 Key Peninsula Hwy N",
+        "addressLocality": "Lakebay",
+        "addressRegion": "WA",
+        "postalCode": "98349",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 47.2628,
+        "longitude": -122.7562
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "11:00",
+        "closes": "18:00",
+        "note": "Hours vary based on park events, concerts, and league games."
+      },
+      "menu": "https://snackshack.pages.dev/#menu",
+      "servesCuisine": "American",
+      "priceRange": "$",
+      "amenityFeature": {
+        "@type": "LocationFeatureSpecification",
+        "name": "Disc Golf Pro Shop",
+        "value": "true"
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #69BE28; /* Seahawks Action Green */
+            --accent-color: #A5ACAF; /* Seahawks Wolf Grey */
+            --dark-bg: #111111;
+            --light-bg: #FDFBF7;
+            --text-dark: #2B2D42;
+            --text-light: #F8F9FA;
+            --hawks-navy: #002244;
+            --hawks-green: #69BE28;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Header / Navbar */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1.5rem 5%;
+            transition: all 0.4s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(165, 172, 175, 0.9); /* Seahawks Wolf Grey */
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--hawks-green); /* Action Green Accent */
+        }
+
+        header.scrolled {
+            background-color: rgba(165, 172, 175, 0.98);
+            padding: 1rem 5%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .logo i {
+            color: var(--hawks-navy);
+            margin-right: 5px;
+            font-size: 1.8rem;
+        }
+
+        .logo-word {
+            padding: 4px 12px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .snack-box {
+            background-color: var(--hawks-green);
+            color: var(--hawks-navy);
+        }
+
+        .shack-box {
+            background-color: var(--hawks-navy);
+            color: var(--hawks-green);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--hawks-navy);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--text-light);
+            background-color: var(--hawks-navy);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(17,17,17,0.4), rgba(17,17,17,0.8)), url('tradition.jpg') center/cover;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            color: var(--text-light);
+            animation: fadeInUP 1s ease forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: transparent;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        /* Our Story / Heritage Section */
+        .heritage {
+            padding: 6rem 5%;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .heritage-img {
+            flex: 1;
+            position: relative;
+        }
+
+        .heritage-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            filter: sepia(0.2) contrast(1.1); /* Slight retro feel to the old image */
+        }
+
+        .heritage-img::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary-color);
+            border-radius: 10px;
+            z-index: -1;
+        }
+
+        .heritage-text {
+            flex: 1;
+        }
+
+        .section-subtitle {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .heritage-text h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--hawks-navy);
+        }
+
+        .heritage-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            background-color: var(--dark-bg);
+            padding: 6rem 5%;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .menu-section h2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .menu-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.06);
+            border-color: var(--primary-color);
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed rgba(255,255,255,0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .menu-header h3 {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+        }
+
+        .menu-header .price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .menu-item p {
+            font-size: 0.95rem;
+            color: #AAA;
+        }
+
+        /* Pro Shop Section */
+        .pro-shop {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, var(--hawks-navy), #001224);
+            color: white;
+            text-align: center;
+            border-top: 4px solid var(--hawks-green);
+            border-bottom: 4px solid var(--hawks-green);
+        }
+
+        .pro-shop h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .pro-shop .icon {
+            font-size: 3rem;
+            color: var(--hawks-green);
+            margin-bottom: 1rem;
+        }
+
+        .pro-shop p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            color: #D0D0D0;
+        }
+
+        /* Location & Footer */
+        .contact-section {
+            padding: 6rem 5%;
+            background-color: var(--light-bg);
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .contact-card h2 {
+            font-size: 2.5rem;
+            color: var(--hawks-navy);
+            margin-bottom: 2rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-item i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .info-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .info-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: var(--dark-bg);
+            color: #888;
+            text-align: center;
+            padding: 3rem 5%;
+            border-top: 1px solid #222;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: #888;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Animations */
+        @keyframes fadeInUP {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3.5rem; }
+            .heritage { flex-direction: column; }
+            .heritage-img::after { display: none; }
+            nav ul { display: none; /* simple mobile hide for now */ }
+            header { justify-content: center; background-color: rgba(17, 17, 17, 0.95); }
+            .contact-card { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <a href="#" class="logo">
+            <i class="fa-solid fa-burger"></i> 
+            <span class="logo-word snack-box">Snack</span> 
+            <span class="logo-word shack-box">Shack</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#proshop">Pro Shop</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#contact">Visit Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>A Taste of Tradition</h1>
+            <p>Family-owned, locally loved. Serving up the best burgers and hot dogs inside Volunteer Park since day one.</p>
+            <a href="#menu" class="btn">View Our Menu</a>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="heritage">
+        <div class="heritage-img">
+            <!-- Using the historic Wayback Machine image of the stand -->
+            <img src="https://web.archive.org/web/20180806215701im_/http://snackshack-volunteerpark.com/images/concession.jpg" alt="The original Snack Shack concession stand">
+        </div>
+        <div class="heritage-text">
+            <span class="section-subtitle">Our Heritage</span>
+            <h2>More Than Just a Concession Stand</h2>
+            <p>For years, The Snack Shack has been the heart of Volunteer Park. We're a proud, family-owned eatery dedicated to feeding the Key Peninsula community.</p>
+            
+            <aside style="background: rgba(105, 190, 40, 0.1); border-left: 4px solid var(--primary-color); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                <h4 style="font-family: 'Playfair Display', serif; color: var(--hawks-navy); margin-bottom: 0.5rem; font-size: 1.2rem;">From the Archives</h4>
+                <p style="font-size: 0.95rem; margin-bottom: 1rem; font-style: italic; color: #444;">"As of March 4, the Snack Shack… is officially a full-time… eatery."</p>
+                <a href="news-archive-2017.html" style="color: var(--hawks-navy); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; text-decoration: none; border-bottom: 1px solid var(--primary-color);">Read the 2017 Feature Article</a>
+            </aside>
+
+            <p>Whether you're finishing up a round of disc golf, catching a park concert, or just craving a classic, juicy cheeseburger, we've got a spot at the window waiting for you. Come see why we've been a local favorite for generations.</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <span class="section-subtitle">Fresh & Hot</span>
+        <h2>2024 Shack Menu</h2>
+        <div class="menu-grid">
+            
+            <div class="menu-item">
+                <div class="menu-header">
+                    <h3>Classic Cheeseburger</h3>
+                    <span class="price">$10.50</span>
+                </div>
+                <p>A juicy beef patty topped with melted cheese, crisp lettuce, tomato, and our signature shack sauce.</p>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <h3>Bacon Double Burger</h3>
+                    <span class="price">$13.00</span>
+                </div>
+                <p>Two smashed patties, crispy smoked bacon, double cheese, and all the fixings.</p>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <h3>Nathan's Famous Hot Dog</h3>
+                    <span class="price">$7.50</span>
+                </div>
+                <p>100% premium beef hot dog, grilled to perfection and served in a toasted bun.</p>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <h3>Chili Cheese Dog</h3>
+                    <span class="price">$9.00</span>
+                </div>
+                <p>Our classic hot dog smothered in hearty chili and topped with shredded cheddar.</p>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <h3>Chili Cheese Fries</h3>
+                    <span class="price">$7.50</span>
+                </div>
+                <p>A mountain of crispy golden fries buried under rich chili and melted cheese.</p>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <h3>The "Grand Slam" Meal</h3>
+                    <span class="price">$15.50</span>
+                </div>
+                <p>The ultimate combo: Our Classic Burger, large fries, and an ice-cold drink.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Disc Golf Pro Shop -->
+    <section id="proshop" class="pro-shop">
+        <i class="fa-solid fa-compact-disc icon"></i>
+        <h2>Disc Golf Pro Shop</h2>
+        <p>Did you know we are the primary retailer for the Volunteer Park 9-Hole Course? Stop by before your round to gear up!</p>
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
+            <div style="background: rgba(0,0,0,0.3); padding: 1.5rem 3rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                <h4 style="color: var(--hawks-green); font-size: 1.2rem; margin-bottom: 0.5rem;">Standard Discs</h4>
+                <span style="font-size: 1.5rem; font-weight: bold;">$10 - $15</span>
+            </div>
+            <div style="background: rgba(0,0,0,0.3); padding: 1.5rem 3rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                <h4 style="color: var(--hawks-green); font-size: 1.2rem; margin-bottom: 0.5rem;">Premium Plastic</h4>
+                <span style="font-size: 1.5rem; font-weight: bold;">$20 - $25</span>
+            </div>
+        </div>
+        <p style="margin-top: 2rem; font-style: italic; color: #AAA; font-size: 0.9rem;">Go Hawks! Go Shack!</p>
+    </section>
+
+    <!-- Our Community Section -->
+    <section id="community" class="community-section" style="padding: 6rem 5%; background-color: var(--light-bg); text-align: center; border-top: 4px solid var(--hawks-navy);">
+        <span class="section-subtitle">Local Ecosystem</span>
+        <h2 style="font-size: 3rem; margin-bottom: 3rem; color: var(--hawks-navy);">Our Community</h2>
+        
+        <div id="ecosystem-directory-root" style="max-width: 1200px; margin: 0 auto; text-align: left;">
+            <!-- The VolunteerParkDirectory .jsx component integrates here -->
+            <div style="background: white; border: 2px border-style: dashed; border-color: var(--accent-color); padding: 4rem; border-radius: 20px; text-align: center; color: var(--hawks-navy);">
+                <i class="fa-solid fa-users-rectangle" style="font-size: 3rem; color: var(--hawks-green); margin-bottom: 1rem;"></i>
+                <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 700;">Volunteer Park Ecosystem Directory</h3>
+                <p style="color: #666; margin-top: 0.5rem;">Loading neighbor-first directory...</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 5rem; padding: 4rem 2rem; background: var(--hawks-navy); border-radius: 20px; color: white; max-width: 1000px; margin-left: auto; margin-right: auto; border: 3px solid var(--hawks-green);">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 1rem; color: var(--hawks-green);">Preserving Our Roots</h3>
+            <p style="margin-bottom: 2rem; font-size: 1.1rem; color: #D0D0D0; max-width: 700px; margin-left: auto; margin-right: auto;">The Snack Shack is more than just food; it's a part of the Key Peninsula's living history. Explore our archives to see how Volunteer Park has evolved over the decades.</p>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                <a href="history.html" class="btn" style="border-radius: 50px; font-size: 0.9rem; padding: 1rem 3rem; background-color: var(--hawks-green); color: var(--hawks-navy); border-color: var(--hawks-green); font-weight: 800;">Local History Archive</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location -->
+    <section id="contact" class="contact-section">
+        <div class="contact-card">
+            <h2>Find The Shack</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>Location</h4>
+                    <p>5514 Key Peninsula Hwy N<br>Lakebay, WA 98349</p>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <h4>Hours</h4>
+                    <p>Open during League Games, Park Concerts & Community Events.</p>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <h4>Phone</h4>
+                    <p>(253) 884-9240<br><span style="font-size: 0.8rem; color: #999;">Park Office</span></p>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p>rachel@snackshack-volunteerpark.com</p>
+                </div>
+            </div>
+            <a href="https://www.facebook.com/search/top?q=Snack%20Shack%20Volunteer%20Park" target="_blank" class="btn" style="background-color: #1877F2; border-color: #1877F2; margin-top: 1rem;">
+                <i class="fa-brands fa-facebook-f" style="margin-right: 8px;"></i> Follow on Facebook
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 The Snack Shack at Volunteer Park. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/search/top?q=Snack%20Shack%20Volunteer%20Park" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-yelp"></i></a>
+        </div>
+    </footer>
+
+    <!-- React, ReactDOM, Babel, and Tailwind CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Simple Scroll Script for Header -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    <!-- Render Ecosystem Directory Component -->
+    <script type="text/babel" src="volunteer_park_ecosystem_directory_component.jsx"></script>
+    <script type="text/babel">
+        // Wait for the JSX file to load and then render
+        const renderDirectory = () => {
+            if (window.VolunteerParkDirectory) {
+                const root = ReactDOM.createRoot(document.getElementById('ecosystem-directory-root'));
+                root.render(<window.VolunteerParkDirectory />);
+            } else {
+                setTimeout(renderDirectory, 100);
+            }
+        };
+        renderDirectory();
+    </script>
+</body>
+</html>
